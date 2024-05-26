@@ -1,0 +1,82 @@
+@use "../global" as *;
+
+.l-news-list {
+  margin-top: 60px;
+  margin-bottom: 124px;
+  @include mq("md") {
+    margin-top: 30px;
+  }
+}
+
+
+.l-news-list__inner {
+  display: flex;
+  max-width: 1097px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 25px;
+  @include mq("md") {
+    flex-direction: column;
+  }
+}
+
+.l-news-list__nav {
+  position: sticky;
+  top: 200px;
+  height: 100%;
+  width: 22.5259%;
+  @include mq("md") {
+    position: static;
+    width: 100%;
+    border-bottom: solid 1px $gray02;
+    padding-bottom: 38px;
+  }
+}
+
+
+.l-news-list__posts-wrap {
+  flex-grow: 1;
+  border-left: solid 1px $gray02;
+  @include mq("md") {
+    border-left: none;
+  }
+}
+
+.l-news-list__posts {
+  margin-left: 3.75rem;
+  @include mq("md") {
+    margin-left: 0;
+    margin-top: 1.25rem;
+  }
+}
+
+.l-news-list__post .c-post__category {
+  background-color: $tag-bg;
+}
+
+
+.l-news-list__post .c-post__title {
+  display: inline-block;
+  position: relative;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+    &::before {
+      transform: scale(1, 1); //ホバーした時に線が伸びる
+    }
+  }
+}
+
+.l-news-list__post .c-post__title::before {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: $navy;
+  transition: transform 0.3s;
+  transform: scale(0, 0); //ホバーしていない時の線の状態
+  transform-origin: left top; //左側から伸びる
+}

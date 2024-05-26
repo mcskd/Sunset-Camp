@@ -1,0 +1,39 @@
+@use "sass:math";
+// 文字フォントの種類
+$base-font: "Noto Sans JP", sans-serif;
+$second-font: "Roboto", sans-serif;
+$third-font: "Oswald", sans-serif;
+
+// 文字の太さ
+$regular: 300;
+$normal: 400;
+$medium: 500;
+$bold: 700;
+
+//line-hight
+
+@mixin lh($num: 16, $line: 24) {
+  line-height: ($line / $num);
+}
+
+//ハーフリーディング
+
+@mixin lineHeightCrop($fontsize: 16, $lineFeed: 24) {
+  $lineheight: $lineFeed / $fontsize;
+
+  &::before,
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: "";
+  }
+
+  &::before {
+    margin-top: calc((1 - #{$lineheight}) * 0.5em);
+  }
+
+  &::after {
+    margin-bottom: calc((1 - #{$lineheight}) * 0.5em);
+  }
+}

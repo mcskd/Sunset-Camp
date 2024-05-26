@@ -1,0 +1,84 @@
+@use "../global" as *;
+
+.l-404-hero {
+  margin-top: 236px;
+  padding-bottom: 120px;
+  position: relative;
+  width: min(1270px, 88.19vw);
+  margin-left: auto;
+  @include mq("md") {
+    width: 97.333vw;
+    margin-top: 110px;
+    padding-bottom: 0;
+  }
+}
+
+.l-404-hero__wrap {
+  position: relative;
+}
+
+.l-404-hero__text-box {
+  max-width: 509px;
+  width: 34.3472vw;
+  position: absolute;
+  top: 50%;
+  right: 14.3055%;
+  transform: translateY(-50%);
+  z-index: 10;
+  @include mq("md") {
+    width: 54.566%;
+    right: 21.6%;
+  }
+}
+
+.l-404-hero__text-en {
+  white-space: nowrap;
+  font-size: clamp(2.188rem, 1.417rem + 3.29vw, 4.375rem);
+  font-family: $third-font;
+  font-weight: $bold;
+  @include lh(70, 104);
+  @include lineHeightCrop(70, 104);
+  color: $white;
+}
+
+.l-404-hero__text-ja {
+  margin-top: 1.25rem;
+}
+
+.l-404-hero__text-ja.c-text {
+  color: $white;
+}
+
+.l-404-hero__img {
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 12.7 / 6;
+  @include mq("md") {
+    aspect-ratio: 36.5 / 24.3;
+  }
+}
+
+.l-404-hero__pagenation {
+  margin-top: 1.25rem;
+}
+
+.l-404-hero__prev-button.c-button-prev.c-button-prev--clear {
+  width: 145px;
+}
+
+.l-404 {
+  padding-top: 40px;
+  padding-right: 5.8667vw;
+  padding-bottom: 80px;
+  padding-left: 4.8vw;
+  width: 100%;
+}
+
+.l-404-sp__pagenation {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.l-404-sp__prev-button.c-button-prev {
+  width: 145px;
+}

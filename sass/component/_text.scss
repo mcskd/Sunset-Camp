@@ -1,0 +1,66 @@
+@use "../global" as *;
+
+.c-vertical-text {
+  writing-mode: vertical-rl;
+  font-size: 3.75rem;
+  font-weight: $bold;
+  font-family: $base-font;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  color: $black;
+  white-space: nowrap;
+
+  @include mq("lg") {
+    font-size: 2.5rem;
+    line-height: 1.375;
+  }
+
+  @include mq("md") {
+    writing-mode: horizontal-tb;
+    font-size: 2.125rem;
+    letter-spacing: 0.05em;
+    @include lh(34, 49);
+  }
+}
+
+.c-slide-text {
+  font-size: 9.375rem;
+  color: $navy;
+  font-family: $base-font;
+  font-weight: $bold;
+  white-space: nowrap;
+  @include lh(150, 217);
+
+  @include mq("md") {
+    font-size: 5.25rem;
+    @include lh(84, 122);
+  }
+}
+
+.c-text {
+  font-size: 1rem;
+  font-family: $base-font;
+  font-weight: $normal;
+  letter-spacing: 0.05em;
+  @include lh(16, 38);
+  @include lineHeightCrop(16, 38);
+  color: $black;
+  @include mq("md") {
+    font-size: 0.875rem;
+    @include lh(14, 32);
+    @include lineHeightCrop(14, 32);
+  }
+}
+
+.c-text-l {
+  font-size: 2.5rem;
+  font-family: $base-font;
+  font-weight: $normal;
+  letter-spacing: 0.05em;
+  @include lh(40, 60);
+  color: $black;
+  @include mq("md") {
+    font-size: 1.125rem;
+    @include lh(18, 37);
+  }
+}

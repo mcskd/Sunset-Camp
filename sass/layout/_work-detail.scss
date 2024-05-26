@@ -1,0 +1,120 @@
+@use "../global" as *;
+
+.l-work-detail__breadcrumb {
+  margin-top: 200px;
+  @include mq("md") {
+    margin-top: 90px;
+  }
+}
+
+.l-work-detail {
+  margin-top: 60px;
+  padding-bottom: 119px;
+  @include mq("md") {
+    margin-top: 30px;
+    padding-bottom: 79px;
+  }
+}
+
+.l-work-detail__inner {
+  max-width: 890px;
+  width: 100%;
+  padding: 0 25px;
+  margin: 0 auto;
+  @include mq("md") {
+    padding: 0 30px;
+  }
+}
+
+.l-work-detail__category-wrap {
+  display: flex;
+  gap: 1.320625rem;
+}
+
+.l-work-detail__category {
+  white-space: nowrap;
+  font-size: 0.625rem;
+  font-family: $base-font;
+  font-weight: $medium;
+  @include lh(10, 14);
+  color: $tag-text;
+  padding: 0.4em 1.8em;
+  background-color: $tag-bg;
+  @include mq("md") {
+    padding: 0.5em 1.5em;
+  }
+}
+
+.l-work-detail__title {
+  margin-top: 1.25rem;
+  font-size: 1.625rem;
+  font-family: $base-font;
+  font-weight: $medium;
+  @include lh(26, 50);
+  @include lineHeightCrop(26, 50);
+  color: $black;
+  @include mq("md") {
+    font-size: 1.125rem;
+    @include lh(18, 30);
+    @include lineHeightCrop(18, 30);
+  }
+}
+
+.l-work-detail__date {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.6875rem;
+  font-family: $base-font;
+  font-weight: $bold;
+  @include lh(11, 16);
+  color: $tag-text;
+  @include mq("md") {
+    margin-top: 0.625rem;
+    font-size: 0.625rem;
+    @include lh(10, 14);
+  }
+}
+
+.l-work-detail__img {
+  background-color: aquamarine;
+  max-width: 840px;
+  width: 100%;
+  aspect-ratio: 84 / 47.1;
+  margin: 40px auto 0;
+  @include mq("md") {
+    max-width: 100%;
+    aspect-ratio: 31.5 / 17.6;
+  }
+}
+
+.l-work-detail__content {
+  margin-top: 40px;
+  padding-bottom: 60px;
+  @include mq("md") {
+    margin-top: 42px;
+    padding-bottom: 40px;
+  }
+}
+
+.l-work-detail__content {
+  font-size: 1rem;
+  font-family: $base-font;
+  font-weight: $normal;
+  letter-spacing: 0.05em;
+  @include lh(16, 38);
+  @include lineHeightCrop(16, 38);
+  color: $black;
+  @include mq("md") {
+    font-size: 0.875rem;
+    @include lh(14, 32);
+    @include lineHeightCrop(14, 32);
+  }
+}
+
+.l-work-detail__pagenation {
+  text-align: center;
+}
+
+.l-work-detail__prev-button.c-button-prev {
+  width: 285px;
+}

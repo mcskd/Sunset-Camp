@@ -1,0 +1,63 @@
+@use "../global" as *;
+
+.l-home-news {
+  background-color: $bg-white;
+
+  padding: 120px 0;
+  @include mq("md") {
+    padding: 80px 0 72px;
+  }
+}
+
+
+.l-home-news__wrap {
+  display: flex;
+  align-items: center;
+  @include mq("md") {
+    flex-direction: column;
+  }
+}
+
+.l-home-news__inner.l-default-inner {
+  @include mq("md") {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.l-home-news__heading {
+  border-right: solid 1px $gray02;
+  width: 24%;
+  @include mq("md") {
+    padding-bottom: 2.5rem;
+    border-bottom: solid 1px $gray02;
+    border-right: none;
+    width: 100%;
+  }
+}
+
+.l-home-news__title {
+  @include mq("md") {
+    margin-left: -1.25rem;
+  }
+}
+
+.l-home-news__category-list {
+  margin-top: 2.8125rem;
+  @include mq("md") {
+  margin-top: 2.5rem;
+  }
+}
+
+.l-home-news__posts {
+  margin-left: 3.75rem;
+  @include mq("lg") {
+    margin-left: 2.8125rem;
+  }
+  @include mq("md") {
+    margin-top: 1.25rem;
+    margin-left: 0;
+  }
+}
+
+

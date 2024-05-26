@@ -1,0 +1,122 @@
+@use "../global" as *;
+
+.c-media {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: solid 1px $gray02;
+  padding: 1.875rem 0;
+}
+
+.c-media__wrap {
+  position: relative;
+}
+
+.c-media__link:hover {
+  opacity: 1;
+}
+
+.c-media__link:hover .c-media__title::before {
+  transform: scale(1, 1);
+}
+
+.c-media__img-box {
+  width: 26.36%;
+  min-width: 290px;
+  aspect-ratio: 96.6667/ 76.3333;
+  @include mq("md") {
+    width: 32%;
+    min-width: 120px;
+    aspect-ratio: 4 / 3;
+  }
+}
+.c-media__img {
+  width: 100%;
+}
+
+.c-media__body {
+  flex: 1;
+  margin-left: clamp(1.125rem, 0.421rem + 3vw, 3.125rem);
+}
+
+.c-media__badge {
+  font-size: 0.6875rem;
+  font-family: $base-font;
+  font-weight: $normal;
+  padding: 0.363636em 1.63636em;
+  @include lh(11, 16);
+  background-color: $tag-bg;
+  color: $tag-text;
+  @include mq("md") {
+    font-size: 0.625rem;
+    padding: 0.5em 1.5em;
+    @include lh(11, 14);
+  }
+}
+
+.c-media__title {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5rem;
+  margin-top: 1.875rem;
+  font-family: $base-font;
+  font-weight: $medium;
+  @include lh(24, 35);
+  color: $black;
+
+  @include mq("lg") {
+    font-size: 1.25rem;
+  }
+
+  @include mq("md") {
+    font-size: 0.875rem;
+    margin-top: 0.7rem;
+    @include lh(14, 28);
+  }
+}
+
+.c-media__title::before {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: $navy;
+  transition: transform 0.3s;
+  transform: scale(0, 0); //ホバーしていない時の線の状態
+  transform-origin: left top; //左側から伸びる
+}
+
+.c-media__desc {
+  margin-top: 1.875rem;
+  font-size: 1rem;
+  font-family: $base-font;
+  font-weight: $regular;
+  @include lh(16, 38);
+  color: $tag-text;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.c-media__desc.md-none {
+  display: -webkit-box;
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.c-media__date {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-family: $base-font;
+  font-weight: $bold;
+  @include lh(12, 17);
+  margin-top: 1.0625rem;
+  color: $gray;
+  @include mq("md") {
+    font-size: 0.625rem;
+    margin-top: 0.75rem;
+  }
+}

@@ -1,0 +1,69 @@
+@use "../global" as *;
+
+.c-card__img-box {
+  position: relative;
+}
+
+.c-card__img-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 1.875rem;
+}
+
+.c-card__img-number {
+  font-size: 1rem;
+  font-family: $third-font;
+  font-weight: $bold;
+  @include lh(16, 24);
+  color: $white;
+}
+
+.c-card__title {
+  margin-top: 0.625rem;
+  font-size: 1.625rem;
+  font-family: $base-font;
+  font-weight: $bold;
+  @include lh(26, 38);
+  color: $white;
+}
+
+.c-card__body {
+  margin-top: 1.25rem;
+  padding-right: 1.25rem;
+  @include mq("md") {
+    padding-right: 0;
+  }
+}
+
+.c-card__button {
+  display: flex;
+  justify-content: end;
+  margin-top: 1.25rem;
+}
+
+.c-card__button-link {
+  position: relative;
+  width: 141px;
+  padding: 0.875rem 1rem 0.875rem 1.5rem;
+  border: solid 1px $navy;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: $second-font;
+  font-weight: $medium;
+  @include lh(14, 16);
+  color: $navy;
+}
+
+.c-card__button-link::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  right: 1.25em;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-top: 1.5px solid $navy;
+  border-right: 1.5px solid $navy;
+  transform: translateY(-50%) rotate(45deg);
+}

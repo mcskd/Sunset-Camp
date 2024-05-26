@@ -1,0 +1,26 @@
+@use "../global" as *;
+
+.l-default-inner {
+  max-width: 1150px;
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 0 auto;
+
+  @include mq("md") {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.l-large-inner {
+  max-width: 1200px;
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  @include mq("md") {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

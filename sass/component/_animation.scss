@@ -1,0 +1,117 @@
+@use "../global" as *;
+
+.c-slide-text__box {
+  margin-top: 60px;
+  display: flex;
+  width: 100vw;
+  height: 300px;
+  overflow-x: hidden;
+  @include mq("md") {
+  margin-top: 108px;
+  }
+}
+
+.c-slide-text__item {
+  width: auto;
+  height: 100%;
+}
+
+.c-slide-text__item:first-child {
+  animation: loop 50s -25s linear infinite;
+}
+
+.c-slide-text__item:last-child {
+  animation: loop2 50s linear infinite;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+
+
+.c-text-slidein.c-text-slidein--left {
+  transform: translateX(100%);
+  @include mq("md") {
+    transform: translateX(-100%);
+
+  }
+}
+
+.c-text-slidein.inview.c-text-slidein--left {
+  animation: 1s ease 0s  slide-animation-left;
+  transform: translateX(0);
+  @include mq("md") {
+  animation: 1s ease 0s  slide-animation-right;
+
+  }
+}
+
+@keyframes slide-animation-left {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+
+.c-text-slidein.c-text-slidein--right {
+  transform: translateX(-100%);
+}
+
+.c-text-slidein.inview.c-text-slidein--right {
+  animation: 1s ease 0s  slide-animation-right;
+  transform: translateX(0);
+}
+
+@keyframes slide-animation-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.c-fade-up.visible {
+  animation-name:fadeUpAnime;
+  animation-duration:0.5s;
+ animation-fill-mode:forwards;
+  opacity:0;
+}
+
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}

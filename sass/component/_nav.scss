@@ -1,0 +1,146 @@
+@use "../global" as *;
+
+//header
+.c-nav {
+  height: inherit;
+  display: flex;
+  gap: 3.125rem;
+  @include mq("lg") {
+    gap: 2rem;
+  }
+}
+
+.c-nav__item {
+  height: inherit;
+}
+
+.c-nav__link {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  font-family: $base-font;
+  font-weight: $medium;
+  @include lh(16, 19);
+  @include lineHeightCrop(16, 19);
+  color: $black;
+  height: inherit;
+  padding: 1.90625em 0;
+}
+
+.c-nav__link.c-nav__contact-link {
+  display: flex;
+  align-items: center;
+  padding: 1.90625em 2.5em;
+  background-color: $navy02;
+  color: $white;
+}
+
+.fa-envelope::before {
+  font-size: 1.375em;
+  margin-right: 0.625em;
+}
+
+//News
+.c-category__list {
+  row-gap: 1.25rem;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  @include mq("md") {
+    row-gap: 0.9375rem;
+    column-gap: 2.5rem;
+    padding-left: 0.875rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.c-category__list-item:not(:first-child) {
+  margin-top: 1.25rem;
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+
+.c-category__list-item {
+
+}
+
+.c-category__list-link {
+  white-space: nowrap;
+  font-size: 0.75rem;
+  font-family: $base-font;
+  font-weight: $medium;
+  @include lh(12, 17);
+  letter-spacing: 0;
+  color: $gray;
+}
+
+.c-category__list-item.is-visible > .c-category__list-link {
+  color: $black;
+}
+
+.c-category__list-item.is-visible {
+  position: relative;
+
+}
+
+.c-category__list-item.is-visible::before {
+  position: absolute;
+  top: 50%;
+  left: -1rem;
+  transform: translateY(-50%);
+  display: inline-block;
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: $navy;
+  @include mq("md") {
+    left: -0.875rem;
+  }
+}
+
+
+//下層ページのナビゲーション
+
+
+.c-page-nav__list {
+  display: flex;
+  justify-content: center;
+  gap: 7.5rem;
+  @include mq("md") {
+    gap: 2.5rem;
+  }
+}
+
+.c-page-nav__item {
+  position: relative;
+  padding-right: 1.1875rem;
+  @include mq("md") {
+    padding-right: 1rem;
+  }
+}
+
+.c-page-nav__item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: rotate(45deg) translate(-50%);
+  width: 0.3125em;
+  height: 0.3125em;
+  border-right: 1px solid $navy;
+  border-bottom: 1px solid $navy;
+
+}
+
+.c-page-nav__link {
+  font-size: 1rem;
+  font-family: $base-font;
+  font-weight: $normal;
+  @include lh(16, 23);
+  color: $navy;
+  @include mq("md") {
+    font-size: 0.75rem;
+  }
+}

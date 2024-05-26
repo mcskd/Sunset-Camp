@@ -1,0 +1,103 @@
+@use "../global" as *;
+
+.c-post {
+  width: 92.822966%;
+  @include mq("md") {
+    width: 100%;
+  }
+}
+
+.c-post__item {
+  padding-bottom: 1.875rem;
+  border-bottom: 1px solid $gray02;
+  @include mq("md") {
+    padding-bottom: 1.25rem;
+  }
+}
+
+.c-post__link {
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.c-post__link:hover .c-post__title::before {
+  transform: scale(1, 1);
+}
+
+.c-post__item:not(:first-child) {
+  margin-top: 1.875rem;
+  @include mq("md") {
+    margin-top: 1.25rem;
+  }
+}
+
+.c-post__meta {
+  display: flex;
+  align-items: center;
+  gap: 1.8125rem;
+  @include mq("md") {
+    gap: 0.75rem;
+  }
+}
+
+.c-post__date {
+  font-size: 0.75rem;
+  font-family: $base-font;
+  font-weight: $bold;
+  @include lh(12, 17);
+  color: $gray;
+}
+
+.c-post__category-wrap {
+  display: flex;
+  gap: 1.25rem;
+  @include mq("md") {
+    gap: 0.375rem;
+  }
+}
+
+.c-post__category {
+  white-space: nowrap;
+  font-size: 0.625rem;
+  font-family: $base-font;
+  font-weight: $medium;
+  @include lh(10, 14);
+  color: $tag-text;
+  padding: 0.4em 1.8em;
+  background-color: $white;
+  @include mq("md") {
+    padding: 0.5em 1.5em;
+  }
+}
+
+.c-post__title {
+  display: inline-block;
+  position: relative;
+  white-space: wrap;
+  margin-top: 1.625rem;
+  font-size: 1rem;
+  font-family: $base-font;
+  font-weight: $medium;
+  @include lh(16, 23);
+  color: $black;
+  @include mq("md") {
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    @include lh(14, 28);
+  }
+}
+
+.c-post__title::before {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: $navy;
+  transition: transform 0.3s;
+  transform: scale(0, 0); //ホバーしていない時の線の状態
+  transform-origin: left top; //左側から伸びる
+}

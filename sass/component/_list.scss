@@ -1,0 +1,60 @@
+@use "../global" as *;
+
+.c-info-list__item {
+  border-bottom: 1px solid $gray02;
+}
+
+.c-info-list__item:not(:first-child) {
+  margin-top: 2.5rem;
+  @include mq("md") {
+    margin-top: 1.25rem;
+  }
+}
+
+.c-info-list__item-inner {
+  padding-bottom: 2.5rem;
+  display: flex;
+  @include mq("md") {
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    flex-direction: column;
+  }
+}
+
+.c-info-list__label {
+  width: 16%;
+  @include mq("md") {
+    width: 100%;
+  }
+}
+
+.c-info-list__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 84%;
+  @include mq("md") {
+    gap: 0.625rem;
+    width: 100%;
+  }
+}
+
+.c-info-list__label-text {
+  font-weight: $medium;
+}
+
+.c-info-list__detail-text {
+  font-weight: $normal;
+}
+
+.c-info-list__label-text,
+.c-info-list__detail-text {
+  font-size: 1rem;
+  font-family: $base-font;
+  @include lh(16, 23);
+  color: $black;
+  @include mq("md") {
+    font-size: 0.875rem;
+    @include lh(14, 20);
+  }
+}

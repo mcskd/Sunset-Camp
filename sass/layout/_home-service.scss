@@ -1,0 +1,27 @@
+@use "../global" as *;
+
+.l-home-service {
+  overflow-x: hidden;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  @include mq("md") {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+
+.l-home-service__card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+  column-gap: 1.0625rem;
+  row-gap: 3.125rem;
+  margin-top: 40px;
+  @include mq("md") {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+    padding: 0 5px;
+  }
+}
+
+

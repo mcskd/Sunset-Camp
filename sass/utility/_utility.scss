@@ -1,0 +1,15 @@
+@use "../global" as *;
+
+.md-show {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.md-none {
+  display: block;
+  @include mq("md") {
+    display: none;
+  }
+}

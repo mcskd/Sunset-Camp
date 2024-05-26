@@ -1,0 +1,67 @@
+@use "../global" as *;
+
+
+.c-title {
+  font-size: 4.375rem;
+  font-family: $third-font;
+  font-weight: $bold;
+  @include lh(70, 104);
+  color: $black;
+  text-align: left;
+
+  @include mq("md") {
+    font-size: 2.375rem;
+    @include lh(38, 56)
+  }
+}
+
+.c-title.c-title--right {
+  text-align: right;
+  @include mq("md") {
+    text-align: left;
+  }
+}
+
+.c-title-line {
+  display: block;
+}
+
+.c-title-line__ja {
+  font-size: 1rem;
+  font-family: $base-font;
+  font-weight: $bold;
+  @include lh(16, 39);
+  color: $navy02;
+
+  @include mq("md") {
+    font-size: 0.75rem;
+    @include lh(12, 17);
+  }
+}
+
+.c-title-line__box {
+  display: flex;
+  align-items: center;
+}
+
+.c-title-line__en {
+  font-size: 2.5rem;
+  font-family: $third-font;
+  font-weight: $bold;
+  @include lh(40, 59);
+  color: $black;
+  @include mq("md") {
+    font-size: 1.625rem;
+    @include lh(26, 39);
+  }
+}
+
+.c-title-line__border {
+  width: 60px;
+  height: 2px;
+  background-color: $black;
+  margin-left: 20px;
+  @include mq("md") {
+    margin-left: 10px;
+  }
+}
